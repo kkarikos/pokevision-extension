@@ -1,0 +1,26 @@
+{
+    "manifest_version": 2,
+
+    "name": "Pokevision extension",
+    "description": "This extension shows a Google Image search result for the current page",
+    "version": "1.0",
+    "content_scripts": [{
+        "matches": ["https://pokevision.com/*"],
+        "js": ["script.js"]
+    }],
+    "permissions": [
+      "notifications",
+      "webRequest",
+      "https://pokevision.com/"
+    ],
+    "background": {
+      "persistent": true,
+      "scripts": ["background.js"]
+    },
+    "web_accessible_resources": [
+      "main.js"
+    ],
+    "externally_connectable": {
+      "matches": ["*://pokevision.com/*"]
+    }
+}
